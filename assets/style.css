@@ -1,0 +1,154 @@
+/* Styling dasar tetap sama */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8db94;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Responsif untuk container */
+.container {
+  height: 50vh; /* Menggunakan height yang fleksibel */
+  width: 80vw; /* Menggunakan width yang fleksibel */
+  max-width: 700px; /* Batas maksimal lebar container */
+  max-height: 600px; /* Batas maksimal tinggi container */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Agar elemen bisa menumpuk pada layar kecil */
+}
+
+.buttons {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button {
+  background-color: #f4c531;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0b020;
+  transform: scale(1.05);
+}
+
+/* Gaya es krim */
+.popsicle {
+  width: 25vw; /* Lebar fleksibel untuk menyesuaikan layar */
+  max-width: 180px; /* Maksimal ukuran */
+  height: auto;
+  position: relative;
+  top: 45px;
+  border-radius: 90px 90px 20px 20px;
+}
+
+.popsicle:before {
+  position: absolute;
+  content: "";
+  height: 180px;
+  width: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  right: 20px;
+  top: 60px;
+}
+
+.popsicle:after {
+  position: absolute;
+  content: "";
+  height: 180px;
+  width: 30px;
+  background-color: #dba55b;
+  top: 300px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.popsicle-1 {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #ff7eaf 0,
+    #ff7eaf 20px,
+    #ff0565 20px,
+    #ff0565 40px
+  );
+}
+
+.popsicle-2 {
+  background-size: 60px 300px;
+  background-image: radial-gradient(
+    circle at 30px 53px,
+    #521a01 80px,
+    #ffba00 81px
+  );
+}
+
+.popsicle-3 {
+  background-color: #5e3a16;
+  background-image: radial-gradient(#c39a6b 4px, transparent 4px);
+  background-size: 30px 30px;
+}
+
+/* Media Queries untuk Responsivitas */
+
+/* Tampilan untuk layar lebih kecil (HP) */
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+    height: auto;
+    top: 50%;
+    flex-direction: column; /* Susun ke bawah pada layar kecil */
+    align-items: center;
+  }
+
+  .popsicle {
+    width: 50vw;
+    max-width: 150px; /* Ukuran lebih kecil pada layar kecil */
+  }
+
+  .buttons {
+    top: 85%;
+  }
+
+  .button {
+    top: 95%;
+  }
+}
+
+/* Tampilan untuk layar sangat kecil (HP kecil) */
+@media (max-width: 480px) {
+  .popsicle {
+    width: 60vw;
+    max-width: 120px; /* Ukuran lebih kecil untuk layar sangat kecil */
+  }
+
+  button {
+    padding: 8px 16px; /* Sesuaikan padding tombol */
+  }
+}
